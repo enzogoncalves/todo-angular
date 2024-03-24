@@ -1,0 +1,44 @@
+section {
+	position: absolute;
+	width: 100%;
+	inset: 0;
+	background-color: rgba(255, 255, 255, .7);
+	display: grid;
+	place-content: center;
+}
+
+section > div {
+	padding: 2rem;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
+	border-radius: 7px;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+section input {
+	padding: .5rem .75rem;
+	outline: none;
+	font-size: 1rem;
+}
+
+section a {
+	border: none;
+	border-radius: 7px;
+	padding: .5rem .75rem;
+	color: white;
+	font-size: 1rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+}
+
+section a#create {
+	background-color: rgb(49, 119, 250);
+}
+
+section a#cancel {
+	background-color: rgb(250, 49, 49);
+}
