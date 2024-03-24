@@ -30,12 +30,12 @@ export class HomeComponent {
   }
 
   checkTodo(id: number) {
-    this.todoService.checkTodo(this.todoList[id].id);
+    this.todoService.checkTodo(id);
     this.todoList = this.todoService.getTodoList();
   }
 
   deleteTodo(id: number) {
-    this.todoService.deleteTodo(this.todoList[id].id);
+    this.todoService.deleteTodo(id);
     this.todoList = this.todoService.getTodoList();
   }
 }

@@ -6,13 +6,16 @@ import { Todo } from './todo';
 })
 export class TodoService {
 	todoList: Todo[] = [];
+	uid: number = 0;
 	
 	createTodo(text: String) {
 		this.todoList.push({
 			checked: false,
 			text: text,
-			id: this.todoList.length
+			id: this.uid
 		})
+
+		this.uid++;
 	}
 
 	getTodoList(): Todo[] {
@@ -20,10 +23,20 @@ export class TodoService {
 	}
 
 	checkTodo(id: number) {
-		this.todoList[id].checked = !this.todoList[id].checked;
+		this.todoList.map((e) => {
+			if(e.id == id) {
+				e.checked = !e.checked;
+			}
+		})
 	}
 
 	deleteTodo(id: number) {
-		this.todoList.splice(id, 1)
+		this.todoList.forEach((e, i) => {
+			if(e.id == id) {
+				this.todoList.splice(i, 1)
+			}
+		})
+
+		console.log(this.todoList)
 	}
 }
